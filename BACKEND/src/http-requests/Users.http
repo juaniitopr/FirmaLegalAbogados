@@ -1,0 +1,69 @@
+### Crear un nuevo usuario como abogado
+POST http://localhost:9000/api/usuarios/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1lcm9JZGVudGlmaWNhY2lvbiI6IjEyMzQ1Njc4OTAiLCJub21icmUiOiJBbGV4YW5kZXIiLCJhcGVsbGlkbyI6IlBlcmRvbW8gUGFycmEiLCJlbWFpbCI6ImFsZXhhbmRlci5wZXJkb21vQGdtYWlsLmNvbSIsIm5vbWJyZV9yb2wiOiJhc2lzdGVudGUiLCJpYXQiOjE3NDAzNTEwMTEsImV4cCI6MTc0MDM1NDYxMX0.8VJrQHS3dr_72oX6Y1tE0aHDO8GYOG4TqGmeIt7t_f8
+
+{
+  "numeroIdentificacion": "123568978",
+  "nombres": "Lamine",
+  "apellidos": "Yamal",
+  "telefono": "0101010101",
+  "email": "lamine@example.com",
+  "password": "lamine123",
+  "id_rol": "1"
+}
+
+### Crear un nuevo usuario como asistente
+POST http://localhost:9000/api/usuarios/create
+Content-Type: application/json
+
+{
+  "numeroIdentificacion": "6519651651",
+  "nombres": "Leonardo",
+  "apellidos": "Rivas",
+  "telefono": "9876543210",
+  "email": "leonardo@example.com",
+  "password": "lamine123",
+  "id_rol": "2"
+}
+
+### Crear un nuevo usuario como cliente
+POST http://localhost:9000/api/usuarios/create
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1lcm9JZGVudGlmaWNhY2lvbiI6Ijk5OTk5OTk5OTkiLCJub21icmUiOiJBbGV4YW5kZXIiLCJhcGVsbGlkbyI6IlBhcnJhIiwiZW1haWwiOiJhbGV4YW5kZXIucGVyZG9tb0BnbWFpbC5jb20iLCJ0ZWxlZm9ubyI6IjAwMDAwMDAwMDAiLCJub21icmVfcm9sIjoiYXNpc3RlbnRlIiwiaWF0IjoxNzQ5MzM2NDMwLCJleHAiOjE3NDkzNDAwMzB9.88OUtTWXHLP7rLK-HEvNSHuZfXTXrknWLxfoQ_YqiRc
+
+{
+  "numeroIdentificacion": "1118365949",
+  "nombres": "Armando",
+  "apellidos": "Casas",
+  "telefono": "1236547890",
+  "email": "armando.casas@gmail.com",
+  "password": "armando123",
+  "id_rol": "3"
+}
+
+
+### Obtener todos los usuarios
+GET http://localhost:9000/api/usuarios
+
+### Obtener un usuario por su número de identificación
+GET http://localhost:9000/api/usuarios/9999999999
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1lcm9JZGVudGlmaWNhY2lvbiI6IjEyMzQ1Njc4OTAiLCJub21icmUiOiJBbGV4YW5kZXIiLCJhcGVsbGlkbyI6IlBlcmRvbW8gUGFycmEiLCJlbWFpbCI6ImFsZXhhbmRlci5wZXJkb21vQGdtYWlsLmNvbSIsIm5vbWJyZV9yb2wiOiJhc2lzdGVudGUiLCJpYXQiOjE3NDE1ODY1OTEsImV4cCI6MTc0MTU5MDE5MX0.SdidAT5Sk5TJu7psHMZztEFe4a20JjcIE8piF93i0rM
+
+
+### Actualizar un usuario
+PUT http://localhost:9000/api/usuarios/9999999999
+Content-Type: application/json
+
+{
+  "numeroIdentificacion": "9999999999",
+  "nombres": "Alexander",
+  "apellidos": "Parra",
+  "telefono": "0000000000",
+  "email": "alexander.perdomo@gmail.com",
+  "password": "segura123",
+  "id_rol": "2"
+}
+
+### Eliminar un usuario
+DELETE http://localhost:9000/api/usuarios/1029144521

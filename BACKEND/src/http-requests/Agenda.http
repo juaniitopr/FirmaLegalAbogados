@@ -1,0 +1,44 @@
+### Crear una nueva Agenda
+POST http://localhost:9000/api/agendas
+Content-Type: application/json
+
+{
+  "id_agenda": 1,
+  "fecha": "2024-12-01T10:00:00Z",
+  "hora": "2024-12-01T10:00:00Z",
+  "descripcion": "Reunión importante",
+  "estado": "programada",
+  "id_proceso": 1
+}
+
+###
+
+### Obtener una Agenda por ID
+GET http://localhost:9000/api/agendas/1
+Content-Type: application/json
+
+###
+
+### Obtener todas las Agendas
+GET http://localhost:9000/api/agendas
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1lcm9JZGVudGlmaWNhY2lvbiI6IjEwMjkxNDQ1MjEiLCJub21icmUiOiJKdWFuIFBhYmxvIiwiYXBlbGxpZG8iOiJEaWF6IEJhbGNhemFyIiwiZW1haWwiOiJqdWFuQGdtYWlsLmNvbSIsIm5vbWJyZV9yb2wiOiJhYm9nYWRvIiwiaWF0IjoxNzQwMDk2NjU2LCJleHAiOjE3NDAxMDAyNTZ9.bVQYYc3NgjHj83eePKc69-Nf8HPWapsPqPlA14qssD0
+
+###
+
+### Editar una Agenda
+PUT http://localhost:9000/api/agendas/1
+Content-Type: application/json
+
+{
+  "descripcion": "Reunión importante actualizada",
+  "estado": "cancelada"
+}
+
+###
+
+### Eliminar una Agenda
+DELETE http://localhost:9000/api/agendas/1
+Content-Type: application/json
+
+###

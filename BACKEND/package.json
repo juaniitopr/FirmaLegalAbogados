@@ -1,0 +1,51 @@
+{
+  "name": "Firma Legal Abogados",
+  "version": "1.0.0",
+  "description": "Proyecto para la gestión Legal y DOcumental de L&O Firma Legal Abogados",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "test:agenda": "node --experimental-vm-modules node_modules/jest/bin/jest.js tests/unit/controllers/agendaController.test.js",
+    "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest.js --watch",
+    "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest.js --coverage"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "MONGODB",
+    "EXPRESS"
+  ],
+  "author": "Juan Diaz",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "ejemploapi": "file:",
+    "express": "^4.21.1",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.8.3",
+    "mongoose-sequence": "^6.0.1",
+    "nodemailer": "^7.0.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/plugin-transform-modules-commonjs": "^7.27.1",
+    "@babel/preset-env": "^7.27.2",
+    "@jest/globals": "^30.0.0-beta.3",
+    "@types/jest": "^29.5.14",
+    "@types/supertest": "^6.0.3",
+    "babel-jest": "^30.0.0-beta.3",
+    "cross-env": "^7.0.3",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.4",
+    "nodemon": "^3.1.9",
+    "supertest": "^7.1.1"
+  }
+}

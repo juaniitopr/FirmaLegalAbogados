@@ -1,0 +1,20 @@
+### Crear un nuevo proceso
+POST http://localhost:9000/api/procesos
+Content-Type: application/json
+
+{
+  "id_proceso": 2,
+  "descripcion": "Descripción del proceso",
+  "fecha_inicio": "2024-11-12T10:00:00Z",
+  "estado": "activo",
+  "numeroIdentificacionCliente": "4561237890",
+  "numeroIdentificacionAbogado": "1029144521",
+  "id_tipo": 3
+}
+
+### Obtener un procesos agrupados
+GET http://localhost:9000/api/procesos/
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJudW1lcm9JZGVudGlmaWNhY2lvbiI6Ijk5OTk5OTk5OTkiLCJub21icmUiOiJBbGV4YW5kZXIiLCJhcGVsbGlkbyI6IlBhcnJhIiwiZW1haWwiOiJhbGV4YW5kZXIucGVyZG9tb0BnbWFpbC5jb20iLCJ0ZWxlZm9ubyI6IjAwMDAwMDAwMDAiLCJub21icmVfcm9sIjoiYXNpc3RlbnRlIiwiaWF0IjoxNzQxNTkxMjMwLCJleHAiOjE3NDE1OTQ4MzB9.Q_VURkKztgY7wnSq1ct8IW7TM6aJ_67n4s9WWlPRwbM
+
+### Eliminar un proceso por ID
+DELETE http://localhost:9000/api/procesos/1
