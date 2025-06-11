@@ -3,11 +3,11 @@ import Login from '../../Login/Login';
 import './header.css';
 import { FaArrowDown } from 'react-icons/fa';
 
-// Importar imágenes
-import logo from '../../assets/img/Logo.png';
-import principal1 from '../../assets/img/Principal1.png';
-import principal2 from '../../assets/img/Principal2.png';
-import principal3 from '../../assets/img/Principal3.png';
+// ✅ Importar imágenes
+import logo from '../../../assets/img/Logo.png';
+import principal1 from '../../../assets/img/Principal1.png';
+import principal2 from '../../../assets/img/Principal2.png';
+import principal3 from '../../../assets/img/Principal3.png';
 
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
