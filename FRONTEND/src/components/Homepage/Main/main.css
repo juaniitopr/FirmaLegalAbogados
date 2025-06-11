@@ -1,0 +1,485 @@
+/* Estilos mejorados para el Swiper */
+.swiper {
+  width: 100%;
+  padding: 80px 0;
+}
+
+.swiper-slide {
+  width: 380px;
+  height: 500px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  padding: 0;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.slide-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.proceso-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 30px;
+}
+
+.proceso-img {
+  width: 100%;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.proceso-img img {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease;
+}
+
+.swiper-slide:hover .proceso-img img {
+  transform: scale(1.05);
+}
+
+.proceso-txt {
+  flex: 1;
+}
+
+.proceso-txt h3 {
+  font-size: 22px;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.proceso-txt h3:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 3px;
+  background: #6b89b3;
+}
+
+.proceso-txt p {
+  font-size: 15px;
+  color: #5c5b5b;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.btn-1 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 25px;
+  background-color: transparent;
+  border: 2px solid #6b89b3;
+  border-radius: 30px;
+  color: #6b89b3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  width: 140px;
+}
+
+.btn-1 span {
+  transition: all 0.3s ease;
+}
+
+.btn-1 i {
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.btn-1:hover {
+  background-color: #6b89b3;
+  color: #fff;
+  width: 160px;
+}
+
+.btn-1:hover span {
+  transform: translateX(-5px);
+}
+
+.btn-1:hover i {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Ajustes para el efecto coverflow */
+.swiper-slide {
+  transform: scale(0.9);
+  opacity: 0.7;
+  transition: all 0.4s ease;
+}
+
+.swiper-slide-active {
+  transform: scale(1);
+  opacity: 1;
+}
+  
+  
+/* Estilo para sección de noticias - Versión profesional */
+.noticias-elegantes {
+  background-color: #f8f9fa;
+  padding: 80px 20px;
+  position: relative;
+}
+
+.seccion-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.titulo-seccion {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+  font-weight: 300;
+  letter-spacing: 3px;
+}
+
+.titulo-seccion:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 2px;
+  background: #6b89b3;
+}
+
+.subtitulo-seccion {
+  font-size: 1.1rem;
+  color: #7f8c8d;
+  max-width: 600px;
+  margin: 0 auto;
+  font-weight: 300;
+}
+
+.noticias-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.noticia-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noticia-principal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-imagen-container {
+  position: relative;
+  height: 100%;
+  min-height: 350px;
+}
+
+.noticia-imagen-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.noticia-etiqueta {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: #6b89b3;
+  color: white;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.noticia-contenido {
+  padding: 40px 40px 40px 0;
+}
+
+.noticia-meta {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.noticia-fecha {
+  color: #6b89b3;
+  font-weight: 500;
+}
+
+.noticia-categoria {
+  color: #95a5a6;
+}
+
+.noticia-titulo {
+  font-size: 1.8rem;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.noticia-resumen {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+.noticia-boton {
+  display: inline-flex;
+  align-items: center;
+  color: #6b89b3;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.noticia-boton i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+  font-size: 0.8rem;
+}
+
+.noticia-boton:hover {
+  color: #2c3e50;
+}
+
+.noticia-boton:hover i {
+  transform: translateX(3px);
+}
+
+.noticias-secundarias {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.noticia-secundaria {
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.noticia-secundaria:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.noticia-secundaria .noticia-imagen-container {
+  height: 200px;
+}
+
+.noticia-secundaria .noticia-contenido {
+  padding: 25px;
+}
+
+.noticia-secundaria .noticia-titulo {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}
+
+.noticias-ver-mas {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.boton-ver-todas {
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 30px;
+  background-color: transparent;
+  border: 2px solid #6b89b3;
+  border-radius: 30px;
+  color: #6b89b3;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.boton-ver-todas i {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.boton-ver-todas:hover {
+  background-color: #6b89b3;
+  color: #fff;
+}
+
+.boton-ver-todas:hover i {
+  transform: translateY(3px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .noticia-principal {
+    grid-template-columns: 1fr;
+  }
+  
+  .noticia-principal .noticia-contenido {
+    padding: 25px;
+  }
+  
+  .noticia-imagen-container {
+    min-height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .noticias-secundarias {
+    grid-template-columns: 1fr;
+  }
+  
+  .titulo-seccion {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .noticias-elegantes {
+    padding: 60px 15px;
+  }
+  
+  .titulo-seccion {
+    font-size: 1.5rem;
+  }
+  
+  .subtitulo-seccion {
+    font-size: 1rem;
+  }
+}
+  
+  .nuestro-equipo {
+    text-align: center;
+    font-family: helvetica Neue, helvetica;
+    font-size: 10px;
+    color: #5c5b5b;
+    letter-spacing: 35px;
+  }
+  
+  .nuestro-equipo h1{
+    font-size: 20px;
+  }
+  
+  .abogados {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .abogado-box {
+    grid-column: 1fr;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: justify;
+    width: 300px;
+    max-height: 100%; 
+    overflow-y: auto; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .abogado-box:hover {
+    transform: scale(1.05);
+  }
+  
+  .abogado-box img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .nombre-abogado {
+    text-align: center;
+  }
+  
+  .abogado-box h3 {
+    margin: 10px 0;
+    font-size: 22px;
+    color: #333;
+  }
+  
+  .abogado-box p {
+    margin: 5px 0;
+    color: #777;
+  }
+  
+  .casos {
+    display: none; /* Ocultamos la lista de casos por defecto */
+    margin-top: 15px;
+    text-align: left;
+  }
+  
+  .ver-mas {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    text-align: center;
+  }
+  
+  .ver-mas a {
+    font-family: helvetica Neue, helvetica;
+    font-size: 20px;
+    color: #777;
+    text-decoration: underline;
+    text-decoration-color: #6b89b3;
+    text-underline-offset: 6px;
+    text-decoration-thickness: 4px;
+  }
+  
+  .card-group {
+    margin-bottom: 20PX;
+  }
+
+  .swiper-button-next {
+    color: #6b89b3;
+  }
+
+    .swiper-button-prev {
+    color: #6b89b3;
+  }

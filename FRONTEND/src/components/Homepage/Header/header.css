@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+body {
+  background: #fffefe;
+  margin: 0 auto;
+}
+
+.todo-homepage {
+  width: 100%;
+  height: 100%;
+  background: #FFF;
+}
+
+.header-homepage {
+  background-color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+}
+
+.imagen-logo-homepage {
+  margin: 0 auto;
+  align-items: center;
+  padding-right: 100%;
+}
+
+.logo-homepage {
+  width: 130px;
+  height: 130px;
+  grid-column: 1/2;
+  margin: 0 auto;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.banner-contenido-homepage {
+  text-align: center;
+  grid-column: 2/3;
+  margin: 0 auto;
+  align-items: center;
+  font-family: 'Gill Sans';
+}
+
+.P1-homepage {
+  font-size: 80px;
+  margin: 0 auto;
+  color: #6b89b3;
+}
+
+.P2-homepage {
+  font-size: 30px;
+  margin: 0 auto;
+  color: #6b89b3;
+}
+
+.navegacion-homepage {
+  margin: 0 auto;
+  align-items: center;
+  padding-left: 55%;
+}
+
+.nav-button-homepage {
+  padding: 10px 20px;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  grid-column: 3/4;
+  place-items: center;
+  margin-right: 0 auto;
+  font-size: 12px;
+}
+
+/* .nav-button-homepage:hover {
+  background-color: #cfcfdf;
+  color: #fff;
+} */
+
+.Imagen-Principal {
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.titulo {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  width: 100%; 
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center; 
+  padding: 10px 0; 
+  letter-spacing: 50px; 
+  box-sizing: border-box; 
+}
+
+.Principal {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-caption p{
+  color: #FFF;
+  font-family: 'Sans Serif';
+  font-size: 20px;
+}
+
+.frase-homepage {
+  font-family: 'Sans Serif';
+  font-size: 20px;
+  color: #000000;
+  margin: 0 auto;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  padding-left: 20px;
+  text-decoration: underline;
+  text-decoration-color: #6b89b3;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.Medio-homepage {
+  text-align: center;
+}
+
+.Titulo-Procesos-homepage {
+  text-align: center;
+  font-family: helvetica Neue, helvetica;
+  font-size: 10px;
+  color: #5c5b5b;
+  letter-spacing: 35px;
+}
+
+.Titulo-Procesos-homepage h1{
+  font-size: 20px;
+}
+
+/* Botón de scroll hacia abajo */
+.scroll-down-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(207, 207, 223, 0.7); /* Transparencia añadida */
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  margin: 20px auto; /* Centra el botón */
+}
+
+.scroll-down-button:hover {
+  background-color: rgba(107, 136, 179, 0.8); /* Color con transparencia al hover */
+}
+
+.scroll-down-icon {
+  color: #ffffff;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.scroll-down-button:hover .scroll-down-icon {
+  color: #ffffff;
+}
+
+.swiper {
+  width: 100%;
+  padding: 50px 0 50px 0;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+}
+
+.swiper-slide {
+  width: 400px;
+  height: 450px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+}

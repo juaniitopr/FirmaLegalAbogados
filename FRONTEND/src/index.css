@@ -1,0 +1,133 @@
+/* Formulario con líneas debajo de los campos */
+.line-input {
+  border: none;
+  border-bottom: 2px solid #3d4e58; /* Línea gris debajo de los campos */
+  outline: none;
+  font-size: 1rem;
+  padding: 10px 0;
+  width: 100%;
+  transition: border-bottom 0.3s ease;
+}
+
+.line-input:focus {
+  border-bottom: 2px solid #2c3e50; /* Cambio de color al enfocar */
+}
+
+/* Eliminar contenedor y ocupar todo el ancho de la pantalla */
+.full-width {
+  width: 100%;
+  padding: 0;
+}
+
+/* Estilo general para el cuerpo */
+body {
+  background-color: #f7f7f7; /* Fondo gris claro */
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Card (tarjetas) */
+.card {
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  background-color: white;
+}
+
+/* Alineación del formulario y tabla */
+.form-card {
+  padding: 20px;
+  width: 100%;
+  margin-left: 0;
+}
+
+.table-card {
+  border: none;
+}
+
+/* Tabla ajustada */
+.table-responsive {
+  overflow-x: auto;
+}
+
+/* Estilos para pantallas pequeñas (responsive) */
+@media (max-width: 768px) {
+  .col-md-4, .col-md-8 {
+    width: 100%;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 12px 18px;
+  }
+
+  .form-control {
+    font-size: 1rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilo para las notificaciones Toast */
+.toast-center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1050;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 400px; /* Ajusta el tamaño del Toast */
+  max-width: 100%;
+}
+
+.toast-body {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.toast-icon {
+  margin-right: 10px;
+  transition: transform 0.4s ease;
+}
+
+.toast-success {
+  background-color: #d4edda; /* Verde suave */
+}
+
+.toast-danger {
+  background-color: #f8d7da; /* Rojo suave */
+}
+
+/* Estilo para los botones dentro del formulario */
+button[type="submit"] {
+  border-radius: 25px; /* Bordes redondeados */
+  font-size: 16px;
+  padding: 12px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  background-color: #007bff; /* Fondo azul */
+  border: none;
+  color: white;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3; /* Fondo azul más oscuro al pasar el ratón */
+}
+
+button[type="submit"]:focus {
+  outline: none; /* Quitar el contorno al hacer foco */
+}
+
+/* Estilo de los encabezados de las tarjetas */
+.card-header {
+  background-color: #007bff; /* Fondo azul */
+  color: white;
+  text-align: center;
+  padding: 15px;
+  border-radius: 12px;
+  font-size: 20px;
+}

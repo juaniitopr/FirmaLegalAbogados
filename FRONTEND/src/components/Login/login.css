@@ -1,0 +1,222 @@
+.login-sidebar-homepage {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100vh;
+    background-color: #f9f9f9;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+    padding: 40px;
+    padding-top: 15%;
+    transition: right 0.3s ease, visibility 0s linear 0.3s;
+    z-index: 1000;
+    visibility: hidden;
+  }
+  
+  .login-sidebar-homepage.open {
+    right: 0;
+    visibility: visible;
+    transition: right 0.3s ease, visibility 0s;
+  }
+  
+  .close-btn-homepage {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .login-sidebar-homepage h2 {
+    margin-bottom: 30px;
+    color: #6b89b3;
+    font-size: 24px;
+  }
+  
+  .form-homepage {
+    margin-bottom: 20px;
+  }
+  
+  .form-row-homepage {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  
+  }
+  
+  .textbox-homepage {
+    flex: 1;
+  }
+  
+  .textbox-homepage input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #6b89b3;
+    font-size: 16px;
+    outline: none;
+    box-sizing: border-box;
+  }
+  
+  .textbox-homepage label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 12px;
+    color: #6b89b3;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    color: #6b89b3;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
+  }
+  
+  
+  
+  .create-account {
+    margin-top: 30px;
+  }
+  
+  .create-account h3 {
+    color: #6b89b3;
+    margin-bottom: 10px;
+  }
+  
+  .create-account p {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .consent {
+    margin: 20px 0;
+  }
+  
+  .consent label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .btnlogin-homepage {
+    padding: 10px 20px;
+    background-color: #6b89b3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    text-align: right;
+  }
+
+  .Caja-boton {
+    text-align: right;
+  }
+   .btnlogin-H {
+    padding: 12px 28px;
+    background-color: #6b89b3;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btnlogin-H:hover {
+    background-color: #5a769b;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btnlogin-H:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+}
+
+.btnlogin-H::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.btnlogin-H:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+}
+
+.consent-checkbox {
+  margin: 25px 0;
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+.consent-checkbox label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.consent-checkbox input {
+  margin-right: 10px;
+  min-width: 16px;
+  height: 16px;
+  accent-color: #6b89b3; /* Color del checkbox cuando está marcado */
+}
+
+.consent-checkbox a {
+  color: #6b89b3;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.consent-checkbox a:hover {
+  color: #5a769b;
+}
+
+/* Estilos para el overlay */
+.login-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999; /* Un nivel por debajo del sidebar */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.login-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ajusta el z-index del sidebar para que esté por encima */
+.login-sidebar-homepage {
+  z-index: 1000;
+  /* ... otros estilos existentes ... */
+}
