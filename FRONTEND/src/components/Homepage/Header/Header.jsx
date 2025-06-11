@@ -3,6 +3,12 @@ import Login from '../../Login/Login';
 import './header.css';
 import { FaArrowDown } from 'react-icons/fa';
 
+// Importar imágenes
+import logo from '../../assets/img/Logo.png';
+import principal1 from '../../assets/img/Principal1.png';
+import principal2 from '../../assets/img/Principal2.png';
+import principal3 from '../../assets/img/Principal3.png';
+
 const Header = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -19,23 +25,23 @@ const Header = () => {
       <div className="todo-homepage">
         <div className="header-homepage" id="principal">
           <div className="imagen-logo-homepage">
-            <img src="../src/assets/img/Logo.png" className="logo-homepage" alt="Logo"/>
+            {/* ✅ Usar imagen importada */}
+            <img src={logo} className="logo-homepage" alt="Logo" />
           </div>
           <div className="banner-contenido-homepage">
             <h1 className="P1-homepage">L<span className="P2-homepage">&</span>O</h1>
           </div>
           <div className="navegacion-homepage">
             <nav>
-              {/* Botón de login que abre el sidebar */}
               <button className="nav-button-homepage" id="loginBtn" onClick={openLoginSidebar}>ACCEDER</button>
             </nav>
           </div>
         </div>
 
-        {/* Aquí insertamos el componente Login con las props correspondientes */}
+        {/* Componente Login */}
         <Login isOpen={isSidebarOpen} closeLogin={closeLoginSidebar} />
 
-        {/* IMAGEN PRINCIPAL CON CARRUSEL */}
+        {/* Carrusel con imágenes importadas */}
         <div className="Imagen-Principal">
           <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
             <div className="carousel-indicators">
@@ -45,7 +51,7 @@ const Header = () => {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src="../src/assets/img/Principal1.png" className="d-block w-100" alt="..."/>
+                <img src={principal1} className="d-block w-100" alt="..." />
                 <div className="titulo">
                   <h3>L & O FIRMA LEGAL ABOGADOS</h3>
                 </div>
@@ -54,7 +60,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="../src/assets/img/Principal2.png" className="d-block w-100" alt="..."/>
+                <img src={principal2} className="d-block w-100" alt="..." />
                 <div className="titulo">
                   <h3>L & O FIRMA LEGAL ABOGADOS</h3>
                 </div>
@@ -63,7 +69,7 @@ const Header = () => {
                 </div>
               </div>
               <div className="carousel-item">
-                <img src="../src/assets/img/Principal3.png" className="d-block w-100" alt="..."/>
+                <img src={principal3} className="d-block w-100" alt="..." />
                 <div className="titulo">
                   <h3>L & O FIRMA LEGAL ABOGADOS</h3>
                 </div>
@@ -86,15 +92,17 @@ const Header = () => {
         <div className="frase-homepage">
           <p>"Tu confianza, nuestro compromiso".</p>
         </div>
+
         <div className="Medio-homepage" id="procesos">
-  <br />
-  <a href="#procesos" className="scroll-down-button">
-    <FaArrowDown className="scroll-down-icon" />
-  </a>
-</div>
+          <br />
+          <a href="#procesos" className="scroll-down-button">
+            <FaArrowDown className="scroll-down-icon" />
+          </a>
+        </div>
       </div>
+
       <div className="Titulo-Procesos-homepage">
-        <h1><br />¿EN QUE PODEMOS AYUDARTE?</h1>
+        <h1><br />¿EN QUÉ PODEMOS AYUDARTE?</h1>
       </div>
     </header>
   );
