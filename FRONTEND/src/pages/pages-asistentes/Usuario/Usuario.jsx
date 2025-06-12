@@ -46,8 +46,8 @@ function Usuario() {
       const token = localStorage.getItem("token");
       try {
         const [usuariosResponse, rolesResponse] = await Promise.all([
-          axios.get("http://localhost:9000/api/usuarios", { headers: { Authorization: token } }),
-          axios.get("http://localhost:9000/api/rols", { headers: { Authorization: token } }),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/usuarios`, { headers: { Authorization: token } }),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/rols`, { headers: { Authorization: token } }),
         ]);
 
         setUsers(usuariosResponse.data.data);
@@ -98,7 +98,7 @@ const handleSubmit = async (e) => {
       id_rol: newUser.id_rol,
     };
 
-    await axios.post("http://localhost:9000/api/usuarios/create", userPayload, {
+    await axios.post(`${import.meta.env.VITE_API_URL}/api/usuarios/create`, userPayload, {
       headers: { Authorization: token },
     });
 
@@ -110,7 +110,7 @@ const handleSubmit = async (e) => {
         numeroIdentificacion: newUser.numeroIdentificacion,
       };
 
-      await axios.post("http://localhost:9000/api/abogados", abogadoPayload, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/abogados`, abogadoPayload, {
         headers: { Authorization: token },
       });
     }
@@ -131,7 +131,7 @@ const handleSubmit = async (e) => {
       experiencia: "",
     });
 
-    const response = await axios.get("http://localhost:9000/api/usuarios", { headers: { Authorization: token } });
+    const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/usuarios`, { headers: { Authorization: token } });
     setUsers(response.data.data);
     setIsEditing(false);
   } catch (err) {
@@ -152,7 +152,7 @@ const handleSubmit = async (e) => {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.delete(`http://localhost:9000/api/usuarios/${userToDelete.numeroIdentificacion}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/usuarios/${userToDelete.numeroIdentificacion}`, {
         headers: { Authorization: token },
       });
 
