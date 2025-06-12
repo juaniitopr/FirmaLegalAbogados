@@ -45,13 +45,13 @@ function Agenda() {
       const token = localStorage.getItem("token");
       try {
         // Obtener las agendas
-        const response = await axios.get("http://localhost:9000/api/agendas", {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/agendas`, {
           headers: { Authorization: token },
         });
         setAgendas(response.data);
 
         // Obtener los procesos
-        const procesosResponse = await axios.get("http://localhost:9000/api/procesos", {
+        const procesosResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/procesos`, {
           headers: { Authorization: token },
         });
         setProcesos(procesosResponse.data);
@@ -94,13 +94,13 @@ function Agenda() {
       if (isEditing) {
         delete agendaData.id_proceso;  // Elimina el campo `id_proceso` al actualizar
   
-        response = await axios.put(`http://localhost:9000/api/agendas/${id_agenda}`, agendaData, {
+        response = await axios.put(`${import.meta.env.VITE_API_URL}/api/agendas/${id_agenda}`, agendaData, {
           headers: { Authorization: token },
         });
         setToastMessage('Agenda actualizada con éxito');
       } else {
         // Si estamos creando, enviamos una solicitud POST
-        response = await axios.post('http://localhost:9000/api/agendas', newAgenda, {
+        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/agendas`, newAgenda, {
           headers: { Authorization: token },
         });
         setToastMessage('Agenda creada con éxito');
@@ -120,7 +120,7 @@ function Agenda() {
       });
   
       // Recargar la lista de agendas
-      const fetchData = await axios.get("http://localhost:9000/api/agendas", {
+      const fetchData = await axios.get(`${import.meta.env.VITE_API_URL}/api/agendas`, {
         headers: { Authorization: token },
       });
       setAgendas(fetchData.data);
@@ -160,7 +160,7 @@ function Agenda() {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.delete(`http://localhost:9000/api/agendas/${agendaToDelete.id_agenda}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/agendas/${agendaToDelete.id_agenda}`, {
         headers: { Authorization: token },
       });
 
@@ -169,7 +169,7 @@ function Agenda() {
       setShowToast(true);
 
       // Actualizar la lista de agendas después de la eliminación
-      const response = await axios.get("http://localhost:9000/api/agendas", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/agendas`, {
         headers: { Authorization: token },
       });
       setAgendas(response.data);
