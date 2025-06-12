@@ -21,7 +21,7 @@ const Login = ({ isOpen, closeLogin }) => {
     } else {
       document.body.style.overflow = 'auto';
     }
-    
+
     return () => {
       document.body.style.overflow = 'auto';
     };
@@ -39,7 +39,9 @@ const Login = ({ isOpen, closeLogin }) => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:9000/api/autenticacion", formValues, {
+      const response = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/autenticacion`,
+        formValues, {
         headers: { "Content-Type": "application/json" },
       });
 
@@ -47,16 +49,16 @@ const Login = ({ isOpen, closeLogin }) => {
         throw new Error('No se recibió un token');
       }
 
-      const { token } = response.data;      
+      const { token } = response.data;
       const payload = JSON.parse(atob(token.split(".")[1]));
-      
+
       login(token, payload.role);
 
       const roleRoutes = {
         asistente: "/page-principal",
         abogado: "/abogado",
         cliente: "/d_cliente"
-      };      
+      };
       const userRoute = roleRoutes[payload.nombre_rol] || "/homepage";
       navigate(userRoute, { replace: true });
     } catch (error) {
@@ -77,7 +79,7 @@ const Login = ({ isOpen, closeLogin }) => {
     <>
       {/* Overlay oscuro con efecto blur */}
       <div className={`login-overlay ${isOpen ? 'active' : ''}`} onClick={closeAndClearForm}></div>
-      
+
       {/* Barra de login */}
       <div className={`login-sidebar-homepage ${isOpen ? 'open' : ''}`} id="loginSidebar">
         <div className="close-btn-homepage" onClick={closeAndClearForm}>×</div>
@@ -133,11 +135,11 @@ const Login = ({ isOpen, closeLogin }) => {
 
             <div className="consent-checkbox">
               <label>
-                <input type="checkbox" required aria-required="true"/>
+                <input type="checkbox" required aria-required="true" />
                 Al iniciar sesión, acepto el tratamiento de mis datos personales conforme a la&nbsp;
-                <a 
-                  href="https://www.sic.gov.co/ley-1581-de-2012-proteccion-de-datos-personales" 
-                  target="_blank" 
+                <a
+                  href="https://www.sic.gov.co/ley-1581-de-2012-proteccion-de-datos-personales"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="privacy-link"
                 >
