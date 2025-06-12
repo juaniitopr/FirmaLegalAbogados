@@ -7,7 +7,7 @@ import { Navigation, EffectCoverflow } from 'swiper/modules';
 import './main.css';
 
 // Importación de imágenes
-import sucesionesImg from '../../../assets/img/sucesiones.png';
+import sucesionesImg from '../../../assets/img/suceciones.png';
 import divorcioImg from '../../../assets/img/Divorcio.png';
 import preliquidacionesImg from '../../../assets/img/preliquidaciones.png';
 import salidaImg from '../../../assets/img/salida.png';
