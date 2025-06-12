@@ -36,7 +36,7 @@ function Cliente() {
     const fetchClientes = async () => {
       const token = localStorage.getItem("token");
       try {
-        const response = await axios.get("http://localhost:9000/api/clientes", {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/clientes`, {
           headers: { Authorization: token },
         });
         setClientes(response.data);
@@ -65,12 +65,12 @@ function Cliente() {
     try {
       const apiCall = isEditing
         ? axios.put(
-            `http://localhost:9000/api/clientes/${newCliente.numeroIdentificacion}`,
+            `${import.meta.env.VITE_API_URL}/api/clientes/${newCliente.numeroIdentificacion}`,
             newCliente,
             { headers: { Authorization: token } }
           )
         : axios.post(
-            "http://localhost:9000/api/clientes",
+            `${import.meta.env.VITE_API_URL}/api/clientes`,
             newCliente,
             { headers: { Authorization: token } }
           );
@@ -91,7 +91,7 @@ function Cliente() {
       });
 
       // Actualizar la lista de clientes
-      const response = await axios.get("http://localhost:9000/api/clientes", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/clientes`, {
         headers: { Authorization: token },
       });
       setClientes(response.data);
