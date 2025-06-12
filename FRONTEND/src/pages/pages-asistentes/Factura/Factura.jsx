@@ -46,13 +46,13 @@ function Factura() {
       const token = localStorage.getItem("token");
       try {
         // Obtener las facturas
-        const response = await axios.get("http://localhost:9000/api/facturas", {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/facturas`, {
           headers: { Authorization: token },
         });
         setFacturas(response.data);
 
         // Obtener los procesos
-        const procesosResponse = await axios.get("http://localhost:9000/api/procesos", {
+        const procesosResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/procesos`, {
           headers: { Authorization: token },
         });
         setProcesos(procesosResponse.data);
@@ -92,13 +92,13 @@ function Factura() {
       if (isEditing) {
         // Si estamos editando, enviamos una solicitud PUT para actualizar
         const { id_factura, ...facturaData } = newFactura; // Remover id_factura del cuerpo
-        response = await axios.put(`http://localhost:9000/api/facturas/${id_factura}`, facturaData, {
+        response = await axios.put(`${import.meta.env.VITE_API_URL}/api/facturas/${id_factura}`, facturaData, {
           headers: { Authorization: token },
         });
         setToastMessage('Factura actualizada con éxito');
       } else {
         // Si estamos creando, enviamos una solicitud POST
-        response = await axios.post('http://localhost:9000/api/facturas', newFactura, {
+        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/facturas`, newFactura, {
           headers: { Authorization: token },
         });
         setToastMessage('Factura creada con éxito');
@@ -119,7 +119,7 @@ function Factura() {
       });
 
       // Recargar la lista de facturas
-      const fetchData = await axios.get("http://localhost:9000/api/facturas", {
+      const fetchData = await axios.get(`${import.meta.env.VITE_API_URL}/api/facturas`, {
         headers: { Authorization: token },
       });
       setFacturas(fetchData.data);
@@ -159,7 +159,7 @@ function Factura() {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.delete(`http://localhost:9000/api/facturas/${facturaToDelete.id_factura}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/facturas/${facturaToDelete.id_factura}`, {
         headers: { Authorization: token },
       });
 
@@ -168,7 +168,7 @@ function Factura() {
       setShowToast(true);
 
       // Actualizar la lista de facturas después de la eliminación
-      const response = await axios.get("http://localhost:9000/api/facturas", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/facturas`, {
         headers: { Authorization: token },
       });
       setFacturas(response.data);

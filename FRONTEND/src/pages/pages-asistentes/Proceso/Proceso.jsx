@@ -46,10 +46,10 @@ function Proceso() {
 
       try {
         const [procesosResponse, tiposResponse, subprocesosResponse, documentosResponse] = await Promise.all([
-          axios.get("http://localhost:9000/api/procesos", { headers: { Authorization: token } }),
-          axios.get("http://localhost:9000/api/tipoprocesos", { headers: { Authorization: token } }),
-          axios.get("http://localhost:9000/api/subprocesos", { headers: { Authorization: token } }),
-          axios.get("http://localhost:9000/api/docesp", { headers: { Authorization: token } }),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/procesos`, { headers: { Authorization: token } }),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/tipoprocesos`, { headers: { Authorization: token } }),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/subprocesos`, { headers: { Authorization: token } }),
+          axios.get(`${import.meta.env.VITE_API_URL}/api/docesp`, { headers: { Authorization: token } }),
         ]);
 
         setProcess(procesosResponse.data);
@@ -80,7 +80,7 @@ function Proceso() {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:9000/api/subprocesos/tipo/${value}`,
+          `${import.meta.env.VITE_API_URL}/api/subprocesos/tipo/${value}`,
           { headers: { Authorization: token } }
         );
         setSubprocesos(response.data);
@@ -101,7 +101,7 @@ function Proceso() {
       try {
         const token = localStorage.getItem("token");
         const response = await axios.get(
-          `http://localhost:9000/api/docesp/subproceso/${value}`,
+          `${import.meta.env.VITE_API_URL}/api/docesp/subproceso/${value}`,
           { headers: { Authorization: token } }
         );
         setDocumentos(response.data);
@@ -126,12 +126,12 @@ function Proceso() {
     try {
       const apiCall = isEditing
         ? axios.put(
-          `http://localhost:9000/api/procesos/${newProcess.id_proceso}`,
+          `${import.meta.env.VITE_API_URL}/api/procesos/${newProcess.id_proceso}`,
           processData,
           { headers: { Authorization: token } }
         )
         : axios.post(
-          "http://localhost:9000/api/procesos",
+          `${import.meta.env.VITE_API_URL}/api/procesos`,
           processData,
           { headers: { Authorization: token } }
         );
@@ -154,7 +154,7 @@ function Proceso() {
         id_documento: "",
       });
 
-      const response = await axios.get("http://localhost:9000/api/procesos", {
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/procesos`, {
         headers: { Authorization: token },
       });
       setProcess(response.data);
@@ -176,7 +176,7 @@ function Proceso() {
     const token = localStorage.getItem("token");
 
     try {
-      await axios.delete(`http://localhost:9000/api/procesos/${processToDelete.id_proceso}`, {
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/procesos/${processToDelete.id_proceso}`, {
         headers: { Authorization: token },
       });
 
