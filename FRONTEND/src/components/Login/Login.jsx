@@ -34,41 +34,46 @@ const Login = ({ isOpen, closeLogin }) => {
     });
   };
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    setLoading(true);
+const handleLogin = async (e) => {
+  e.preventDefault();
+  setLoading(true);
 
-    try {
-      const response = await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/autenticacion`,
-        formValues, {
+  try {
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_URL}/api/autenticacion`,
+      formValues,
+      {
         headers: { "Content-Type": "application/json" },
-      });
-
-      if (!response.data.token) {
-        throw new Error('No se recibió un token');
       }
+    );
 
-      const { token } = response.data;
-      const payload = JSON.parse(atob(token.split(".")[1]));
-
-      login(token, payload.role);
-
-      const roleRoutes = {
-        asistente: "/page-principal",
-        abogado: "/abogado",
-        cliente: "/d_cliente"
-      };
-      const userRoute = roleRoutes[payload.nombre_rol] || "/homepage";
-      navigate(userRoute, { replace: true });
-    } catch (error) {
-      console.error(error);
-      const errorMessage = error.response?.data?.message || 'Error al iniciar sesión. Intenta nuevamente.';
-      alert(errorMessage);
-    } finally {
-      setLoading(false);
+    if (!response.data.token) {
+      throw new Error('No se recibió un token');
     }
-  };
+
+    const { token } = response.data;
+    const payload = JSON.parse(atob(token.split(".")[1]));
+
+    login(token, payload.role);
+
+    const roleRoutes = {
+      asistente: "/page-principal",
+      abogado: "/abogado",
+      cliente: "/d_cliente"
+    };
+
+    const userRoute = roleRoutes[payload.nombre_rol] || "/homepage";
+    navigate(userRoute, { replace: true });
+
+  } catch (error) {
+    console.error(error);
+    const errorMessage = error.response?.data?.message || 'Error al iniciar sesión. Intenta nuevamente.';
+    alert(errorMessage);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const closeAndClearForm = () => {
     closeLogin();
