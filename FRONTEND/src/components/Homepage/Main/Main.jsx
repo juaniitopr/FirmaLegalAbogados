@@ -19,6 +19,9 @@ import derechoCanonicoImg from '../../../assets/img/derechoca.png';
 import nulidadesImg from '../../../assets/img/nulidades.png';
 import licenciasImg from '../../../assets/img/licencias.png';
 import englobesImg from '../../../assets/img/englobes.png';
+import noticia1Img from '../../../assets/img/noticia1.webp';
+import abogado1Img from '../../../assets/img/Abogado1.png';
+import abogado2Img from '../../../assets/img/Abogado2.png';
 
 const Main = () => {
   return (
@@ -280,6 +283,88 @@ const Main = () => {
           </div>
         </SwiperSlide>
       </Swiper>
+      <section id="noticias" className="noticias-elegantes">
+        <div className="seccion-header">
+          <h2 className="titulo-seccion">Actualidad Jurídica</h2>
+          <p className="subtitulo-seccion">Información relevante y actualizada para nuestros clientes</p>
+        </div>
+
+        <div className="noticias-grid">
+          <div className="noticia-principal">
+            <div className="noticia-imagen-container">
+              <img src={noticia1Img} alt="Noticia principal" />
+              <div className="noticia-etiqueta">Novedad</div>
+            </div>
+            <div className="noticia-contenido">
+              <div className="noticia-meta">
+                <span className="noticia-fecha">09 Junio 2025</span>
+                <span className="noticia-categoria">Derecho Civil</span>
+              </div>
+              <h3 className="noticia-titulo">Reformas al código civil afectarán procesos sucesorios</h3>
+              <p className="noticia-resumen">
+                Los cambios legislativos recientes modifican los plazos para la declaración de herederos...
+              </p>
+              <a href="#" className="noticia-boton">
+                Leer análisis completo <i className="fas fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <div className="noticias-secundarias">
+            {[{
+              date: '05 Junio 2025',
+              category: 'Derecho Familiar',
+              title: 'Nuevos protocolos para divorcios express'
+            }, {
+              date: '01 Junio 2025',
+              category: 'Jurisprudencia',
+              title: 'Corte establece precedente en casos de tutela'
+            }].map(({ date, category, title }, i) => (
+              <div className="noticia-secundaria" key={i}>
+                <div className="noticia-imagen-container">
+                  <img src={noticia1Img} alt="Noticia secundaria" />
+                </div>
+                <div className="noticia-contenido">
+                  <div className="noticia-meta">
+                    <span className="noticia-fecha">{date}</span>
+                    <span className="noticia-categoria">{category}</span>
+                  </div>
+                  <h3 className="noticia-titulo">{title}</h3>
+                  <a href="#" className="noticia-boton">
+                    Ver detalles <i className="fas fa-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Sección de abogados */}
+      <div className="nuestro-equipo">
+        <h1><br />NUESTRO EQUIPO</h1>
+      </div>
+      <div className="abogados">
+        {[{
+          img: abogado1Img,
+          name: 'OSCAR JARAMILLO',
+          desc: 'Abogado especializado en derecho civil y empresarial, con más de 15 años de trayectoria...'
+        }, {
+          img: abogado2Img,
+          name: 'JENNIFER BRICEÑO',
+          desc: 'Con una sólida formación en derecho de familia y penal...'
+        }].map(({ img, name, desc }) => (
+          <div className="abogado-box" key={name}>
+            <div className="nombre-abogado">
+              <img src={img} alt="Foto de perfil" />
+              <h3>{name}</h3>
+            </div>
+            <p>{desc}</p>
+          </div>
+        ))}
+        <br />
+      </div>
+      <br />
     </main>
   );
 };
