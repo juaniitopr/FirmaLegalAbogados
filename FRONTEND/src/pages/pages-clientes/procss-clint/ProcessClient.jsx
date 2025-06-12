@@ -26,7 +26,7 @@ const ProcessClient = () => {
         }
 
         // Hacer la solicitud para obtener los procesos del cliente
-        const response = await axios.get(`http://localhost:9000/api/procesos/${numeroIdentificacion}`, {
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/procesos/${numeroIdentificacion}`, {
           headers: {
             'Authorization': `${token}`
           }
