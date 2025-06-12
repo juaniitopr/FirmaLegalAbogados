@@ -38,14 +38,14 @@ const Principal = () => {
                     rol: payload.nombre_rol
                 });
 
-                const processesResponse = await axios.get("http://localhost:9000/api/procesos", {
+                const processesResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/procesos`, {
                     headers: { Authorization: token },
                 });
 
                 const activeProcesses = processesResponse.data.filter(p => p.estado === 'activo').slice(0, 3);
                 setProcesses(activeProcesses);
 
-                const appointmentsResponse = await axios.get("http://localhost:9000/api/agendas", {
+                const appointmentsResponse = await axios.get(`${import.meta.env.VITE_API_URL}/api/agendas`, {
                     headers: { Authorization: token },
                 });
 
