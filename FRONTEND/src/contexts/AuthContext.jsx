@@ -38,7 +38,7 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("token");
     setIsAuthenticated(false);
     setRole(null);
-    window.location.href = "/homepage"; // Redirigir a la página de inicio
+    window.location.href = "/"; 
   };
 
   return (
