@@ -3,8 +3,8 @@ import './abogado.css';
 
 const Abogado = () => {
   // Llamadas a la Api
-  const Api1 = 'http://localhost:9000/api/procesos';
-  const Api2 = 'http://localhost:9000/api/agendas';
+  const Api1 = `${import.meta.env.VITE_API_URL}/api/procesos`;
+  const Api2 = `${import.meta.env.VITE_API_URL}/api/agendas`;
 
   // Estados para manejar los datos
   const [procesos, setProcesos] = useState([]);

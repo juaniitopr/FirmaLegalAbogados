@@ -34,7 +34,7 @@ const Usuario = () => {
         });
 
         // Obtener los procesos del cliente
-        const response = await fetch(`http://localhost:9000/api/procesos/${payload.numeroIdentificacion}`, {
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/procesos/${payload.numeroIdentificacion}`, {
           headers: {
             'Authorization': `${token}`
           }
